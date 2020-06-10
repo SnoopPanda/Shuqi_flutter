@@ -46,14 +46,9 @@ class _RootPageState extends State<RootPage> {
     }
   }
 
-    List<Widget> getTabWidget(BuildContext context)  => [
-    Center(child: Text("书架")),
-    Center(child: Text("书城")),
-    Center(child: Text("我的")),
-  ];
 
-  // List<Widget> getTabPage(BuildContext context) =>
-  //     [HomePage(), BookShopPage(), MePage()];
+  List<Widget> getTabPage(BuildContext context) =>
+      [HomePage(), BookShopPage(), MePage()];
   // 如果我们要想在外部该变改控件的状态，我们就需要使用GlobalKey
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -64,13 +59,13 @@ class _RootPageState extends State<RootPage> {
         return WillPopScope(
           child: Scaffold(
             key: _scaffoldKey,
-            appBar: CupertinoNavigationBar(
-              // title: tabs[status.tabIndex].title,
-              middle: tabs[status.tabIndex].title,
-            ),
+            // appBar: CupertinoNavigationBar(
+            //   // title: tabs[status.tabIndex].title,
+            //   middle: tabs[status.tabIndex].title,
+            // ),
             body: IndexedStack(
               index: status.tabIndex,
-              children: getTabWidget(context),
+              children: getTabPage(context),
             ),
             bottomNavigationBar: CupertinoTabBar(
               backgroundColor: Colors.white,
