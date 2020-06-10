@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shuqi_flutter/config/const.dart';
+import 'package:shuqi_flutter/launcher/sq_color.dart';
 import 'package:shuqi_flutter/pages/book_shop/book_shop_page.dart';
 import 'package:shuqi_flutter/pages/home/home_page.dart';
 import 'package:shuqi_flutter/pages/me/me_page.dart';
@@ -16,8 +17,8 @@ class RootPage extends StatefulWidget {
 class _RootPageState extends State<RootPage> {
   List<Image> _tabImages = [
     Image.asset(IMAGE_PATH + "tab_bookshelf_n.png"),
-    Image.asset(IMAGE_PATH + "tab_bookshelf_n.png"),
-    Image.asset(IMAGE_PATH + "tab_bookshelf_n.png"),
+    Image.asset(IMAGE_PATH + "tab_bookstore_n.png"),
+    Image.asset(IMAGE_PATH + "tab_me_n.png"),
   ];
 
   List<Image> _tabSelectedImages = [
@@ -63,14 +64,17 @@ class _RootPageState extends State<RootPage> {
         return WillPopScope(
           child: Scaffold(
             key: _scaffoldKey,
-            appBar: AppBar(
-              title: tabs[status.tabIndex].title,
+            appBar: CupertinoNavigationBar(
+              // title: tabs[status.tabIndex].title,
+              middle: tabs[status.tabIndex].title,
             ),
             body: IndexedStack(
               index: status.tabIndex,
               children: getTabWidget(context),
             ),
-            bottomNavigationBar: BottomNavigationBar(
+            bottomNavigationBar: CupertinoTabBar(
+              backgroundColor: Colors.white,
+              activeColor: SQColor.primary,
               items: tabs,
               currentIndex: status.tabIndex,
               onTap: (index) {
