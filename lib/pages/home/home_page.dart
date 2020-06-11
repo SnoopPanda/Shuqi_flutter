@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shuqi_flutter/config/const.dart';
 import 'package:shuqi_flutter/launcher/sq_color.dart';
+import 'package:shuqi_flutter/pages/home/home_header.dart';
 import 'package:shuqi_flutter/pages/home/home_item.dart';
 import 'package:shuqi_flutter/pages/home/novel.dart';
 import 'package:shuqi_flutter/utils/mock_request.dart';
@@ -157,11 +158,12 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(top: 0),
               controller: scrollController,
               children: <Widget>[
+                favoritedNovels.length > 0 ? HomeHeader(favoritedNovels[0] ): Container(),
                 buildFavoriteView()
               ],
             ),
-          
-          )
+          ),
+          buildNavBar(),
         ],),
       ),
     );

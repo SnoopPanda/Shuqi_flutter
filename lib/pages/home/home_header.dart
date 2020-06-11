@@ -52,7 +52,7 @@ class _HomeHeaderState extends State<HomeHeader> with SingleTickerProviderStateM
         children: <Widget>[
           Positioned(
             top: height-bgHeight,
-            child: Image.asset(IMAGE_PATH+"img/bookshelf_bg.png", fit: BoxFit.cover, width: width, height: bgHeight,),
+            child: Image.asset(IMAGE_PATH+"bookshelf_bg.png", fit: BoxFit.cover, width: width, height: bgHeight,),
           ),
           Positioned(
             bottom: 0,
