@@ -4,6 +4,7 @@ import 'package:shuqi_flutter/launcher/route/router.dart';
 import 'package:shuqi_flutter/launcher/sq_color.dart';
 import 'package:shuqi_flutter/pages/splash_dart.dart';
 import 'package:shuqi_flutter/utils/sq_provider.dart';
+import 'package:shuqi_flutter/utils/toast.dart';
 
 class DefaultApp {
   static void run() {
@@ -21,7 +22,7 @@ class DefaultApp {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ToastUtils.init(MaterialApp(
       title: "书旗",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -33,6 +34,6 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: SQRouter.router.generator,
       routes: RouteMap.routes,
       home: SplashPage(),
-    );
+    ));
   }
 }

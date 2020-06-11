@@ -1,4 +1,5 @@
 const String IMAGE_PATH = "assets/image/";
+const String MOCK_PATH = "assets/mock/";
 
 ///主页
 const int TAB_HOME_INDEX = 0;
