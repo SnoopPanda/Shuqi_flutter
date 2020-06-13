@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuqi_flutter/launcher/sq_color.dart';
+import 'package:shuqi_flutter/pages/book_shop/shop_list_view.dart';
 
 class BookShopPage extends StatefulWidget {
   @override
@@ -36,10 +37,10 @@ class _BookShopPageState extends State<BookShopPage> {
           elevation: 0,
         ),
         body: TabBarView(children: <Widget>[
-          Center(child: Text('1'),),
-          Center(child: Text('2'),),
-          Center(child: Text('3'),),
-          Center(child: Text('4'),),
+          ShopListView(ShopListType.excellent),
+          ShopListView(ShopListType.female),
+          ShopListView(ShopListType.male),
+          ShopListView(ShopListType.cartoon),
         ],),
       ),
     );
